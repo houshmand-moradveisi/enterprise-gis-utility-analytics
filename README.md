@@ -1,1 +1,26 @@
-# enterprise-gis-utility-analytics
+# Enterprise Power Grid Analytics: Komasi Feeder Digital Twin
+
+This project provides an automated, Python-based analytical framework for utility infrastructure management. It transforms raw GIS spatial data and Dispatching outage logs into a high-fidelity **Digital Twin** of the Komasi feeder.
+
+## Project Architecture
+The core of this project is a graph-based representation of the power grid, developed independently using spatial data science libraries.
+- **Topology Engine:** Converts raw GIS lines into a mathematical graph (4,852 nodes/edges) using `NetworkX` and `cKDTree` for spatial snapping.
+- **Data Integration:** Automated ingestion of historical outage data from Dispatching, mapped to the network using coordinate transformation (EPSG:4326 to 32638).
+- **Resilience Analysis:** Identifying failure hotspots and operational patterns for maintenance optimization.
+
+## Technical Workflow
+1. **Network Construction (`01_build_network.py`):** Builds the grid topology, snaps electrical assets (Reclosers, Fuses, Switches) to the nearest graph nodes, and identifies the Substation source.
+2. **Persistence (`02_save_load_network.py`):** Handles network serialization for reproducible research.
+3. **Outage Mapping (`04_visualize_network.py`):** Performs a spatial join between 700+ raw outage events and the graph to extract 121 specific Komasi-related incidents.
+4. **Resilience Reporting (`05_generate_plots.py`):** Generates management-level insights, including outage distribution by technician and hourly peak failure analysis.
+5. **Geospatial Mapping (`06_plot_network_map.py`):** Visualizes network risk hotspots using custom dark-themed heat-overlay maps.
+
+## Technologies Used
+- **Programming:** Python 3.x
+- **Spatial Analysis:** `GeoPandas`, `Shapely`, `PyProj`
+- **Graph Theory:** `NetworkX`
+- **Optimization:** `SciPy (cKDTree)` for sub-meter spatial snapping
+- **Data Science:** `Pandas`, `NumPy`, `Matplotlib`
+
+## Role & Contribution
+As a Senior GIS Project Manager, I architected this analytical solution to bridge the gap between field-level dispatching logs and strategic infrastructure management. I **personally developed the entire codebase**, including the graph topology engine and the automated spatial matching pipeline.
