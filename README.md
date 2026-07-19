@@ -25,8 +25,9 @@ The core of this project is a graph-based representation of the power grid, deve
 ## Role & Contribution
 As a Senior GIS Project Manager, I architected this analytical solution to bridge the gap between field-level dispatching logs and strategic infrastructure management. I **personally developed the entire codebase**, including the graph topology engine and the automated spatial matching pipeline.
 > **Configuration Note:** The file paths defined in `config.py` point to local directories. Please ensure these paths are updated to match your specific local environment before executing the script.
-> ## Project Visualizations
-These images demonstrate the output of the network analysis and digital twin overlay:
+> 
+## Project Visualizations
+These images demonstrate the output of the network analysis and digital twin overlay
 
 ![Risk Spatial Map](output_samples/komasi_risk_spatial_map.png)
 ![Temporal Peak Analysis](output_samples/komasi_temporal_peaks.png)
